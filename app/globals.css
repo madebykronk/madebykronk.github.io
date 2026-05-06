@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --surface: 8 10 18;
+  --surface-elevated: 18 21 34;
+  --ink: 245 247 255;
+  --ink-muted: 148 156 184;
+  --accent: 124 92 255;
+  --accent-glow: 167 139 255;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-surface text-ink antialiased;
+}
+
+::selection {
+  @apply bg-accent/30 text-ink;
+}
