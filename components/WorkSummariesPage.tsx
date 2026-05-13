@@ -8,6 +8,8 @@ type WorkSummariesPageProps = {
   intro: string;
   items: WorkSummary[];
   dataFileHint: string;
+  /** Path prefix for project detail routes, e.g. `/it-work` */
+  projectBasePath: string;
 };
 
 export function WorkSummariesPage({
@@ -15,6 +17,7 @@ export function WorkSummariesPage({
   intro,
   items,
   dataFileHint,
+  projectBasePath,
 }: WorkSummariesPageProps) {
   return (
     <div className="scroll-mt-20 py-16 sm:py-24">
@@ -36,6 +39,10 @@ export function WorkSummariesPage({
           <code className="rounded bg-white/[0.06] px-1.5 py-0.5 font-mono text-[13px] text-ink-muted">
             {dataFileHint}
           </code>
+          . Each card opens a dedicated page at{" "}
+          <code className="rounded bg-white/[0.06] px-1.5 py-0.5 font-mono text-[13px] text-ink-muted">
+            {projectBasePath}/[slug]
+          </code>
           .
         </p>
         {items.length === 0 ? (
@@ -45,7 +52,11 @@ export function WorkSummariesPage({
         ) : (
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {items.map((item) => (
-              <ProjectCard key={item.title} item={item} />
+              <ProjectCard
+                key={item.slug}
+                item={item}
+                basePath={projectBasePath}
+              />
             ))}
           </div>
         )}

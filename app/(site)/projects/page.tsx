@@ -15,6 +15,7 @@ export default function ProjectsPage() {
       intro="Product-shaped work: flows, surfaces, and experiments that started as questions and ended as something you can click through."
       items={projectWorkSummaries}
       dataFileHint="data/projectWork.ts"
+      projectBasePath="/projects"
     />
   );
 }

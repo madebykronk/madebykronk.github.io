@@ -15,6 +15,7 @@ export default function MusicPage() {
       intro="Sonic work in digest form—swap in your own releases, collaborations, and sound design."
       items={musicSummaries}
       dataFileHint="data/musicWork.ts"
+      projectBasePath="/music"
     />
   );
 }

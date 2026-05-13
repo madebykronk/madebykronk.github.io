@@ -1,4 +1,12 @@
+import Link from "next/link";
+
 import type { WorkSummary } from "@/data/workSummary";
+
+type ProjectCardProps = {
+  item: WorkSummary;
+  /** e.g. `/it-work` — card links to `${basePath}/${item.slug}` */
+  basePath: string;
+};
 
 function ProjectCardInner({ item }: { item: WorkSummary }) {
   return (
@@ -22,12 +30,10 @@ function ProjectCardInner({ item }: { item: WorkSummary }) {
           </li>
         ))}
       </ul>
-      {item.href ? (
-        <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-accent">
-          View project
-          <span aria-hidden>→</span>
-        </span>
-      ) : null}
+      <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-accent">
+        View details
+        <span aria-hidden>→</span>
+      </span>
     </>
   );
 }
@@ -35,23 +41,12 @@ function ProjectCardInner({ item }: { item: WorkSummary }) {
 const cardClassName =
   "group block rounded-2xl border border-white/[0.08] bg-surface-elevated/40 p-6 transition hover:border-accent/30 hover:bg-surface-elevated/70 hover:shadow-soft";
 
-export function ProjectCard({ item }: { item: WorkSummary }) {
-  if (item.href) {
-    return (
-      <a
-        href={item.href}
-        target="_blank"
-        rel="noreferrer"
-        className={cardClassName}
-      >
-        <ProjectCardInner item={item} />
-      </a>
-    );
-  }
+export function ProjectCard({ item, basePath }: ProjectCardProps) {
+  const href = `${basePath.replace(/\/$/, "")}/${item.slug}`;
 
   return (
-    <article className={cardClassName}>
+    <Link href={href} className={cardClassName}>
       <ProjectCardInner item={item} />
-    </article>
+    </Link>
   );
 }

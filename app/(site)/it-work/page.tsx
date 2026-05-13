@@ -15,6 +15,7 @@ export default function ItWorkPage() {
       intro="Infrastructure-minded builds: CLIs, design systems, and the glue that keeps teams shipping."
       items={itWorkSummaries}
       dataFileHint="data/itWork.ts"
+      projectBasePath="/it-work"
     />
   );
 }
