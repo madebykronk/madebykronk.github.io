@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { siteConfig } from "@/lib/site";
 
 export function Hero() {
@@ -25,12 +27,12 @@ export function Hero() {
           {siteConfig.tagline}
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
-          <a
+          <Link
             href="/#work"
             className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-white shadow-soft transition hover:bg-accent/90"
           >
             View selected work
-          </a>
+          </Link>
           <a
             href={`mailto:${siteConfig.email}`}
             className="inline-flex items-center justify-center rounded-full border border-white/[0.12] bg-surface-elevated/50 px-6 py-2.5 text-sm font-medium text-ink transition hover:border-accent/40 hover:text-ink"
