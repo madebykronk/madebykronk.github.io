@@ -12,8 +12,8 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
-        <Projects items={projects} />
         <About />
+        <Projects items={projects} />
         <Contact />
       </main>
       <SiteFooter />
