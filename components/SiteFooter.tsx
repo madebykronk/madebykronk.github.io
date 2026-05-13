@@ -9,7 +9,7 @@ export function SiteFooter() {
         <p>
           © {year} {siteConfig.name}. Built with Next.js and Tailwind CSS.
         </p>
-        <a href="#" className="w-fit transition hover:text-ink">
+        <a href="/" className="w-fit transition hover:text-ink">
           Back to top
         </a>
       </div>

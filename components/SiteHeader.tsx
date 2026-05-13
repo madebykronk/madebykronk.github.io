@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const nav = [
-  { href: "#about", label: "About" },
-  { href: "#work", label: "Work" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#work", label: "Work" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
@@ -11,7 +11,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-surface/80 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:h-16 sm:px-6">
         <a
-          href="#"
+          href="/"
           className="font-medium tracking-tight text-ink transition hover:text-accent"
         >
           Kronk
